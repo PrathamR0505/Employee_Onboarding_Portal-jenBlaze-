@@ -45,6 +45,11 @@ export default function Setup() {
     }
   };
 
+  // Password validation checks
+  const hasLength = password.length >= 8;
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  const hasUppercase = /[A-Z]/.test(password);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -56,8 +61,8 @@ export default function Setup() {
       setError('Passwords do not match.');
       return;
     }
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters.');
+    if (!hasLength || !hasSpecialChar || !hasUppercase) {
+      setError('Please ensure your password meets all requirements.');
       return;
     }
     setLoading(true);
@@ -72,63 +77,183 @@ export default function Setup() {
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <h1 className="auth-title">First-Time Setup</h1>
-        <p className="auth-subtitle">Set your password using the invitation from HR</p>
+    <div style={{ 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      minHeight: '100vh', 
+      fontFamily: '"Inter", "Segoe UI", sans-serif',
+      position: 'relative',
+      overflow: 'hidden',
+      background: '#fdfbff'
+    }}>
+      {/* Background Blobs */}
+      <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(216,180,254,0.7) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(70px)', zIndex: 0 }}></div>
+      <div style={{ position: 'absolute', bottom: '-15%', right: '-10%', width: '55vw', height: '55vw', background: 'radial-gradient(circle, rgba(192,132,252,0.6) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(90px)', zIndex: 0 }}></div>
 
-        <div style={{ marginBottom: '1rem', padding: '0.75rem', background: '#eff6ff', borderRadius: '8px', fontSize: '0.85rem', color: '#1e40af' }}>
-          Enter the setup token from your HR invitation, or open the direct link provided by HR.
+      <div style={{ 
+        position: 'relative', 
+        zIndex: 10, 
+        background: '#ffffff', 
+        borderRadius: '24px', 
+        padding: '3rem 3.5rem', 
+        width: '100%', 
+        maxWidth: '560px', 
+        boxShadow: '0 25px 50px -12px rgba(124, 58, 237, 0.15)', 
+        border: '1px solid rgba(237, 233, 254, 0.8)' 
+      }}>
+        
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#4c1d95', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
+          Create Employee Account
+        </h1>
+        <p style={{ color: '#6b7280', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+          Complete your registration to access the HR portal.
+        </p>
+
+        {/* Info Alert */}
+        <div style={{ background: '#f5f3ff', border: '1px solid #ede9fe', borderRadius: '12px', padding: '1rem', display: 'flex', gap: '0.75rem', marginBottom: '2rem' }}>
+          <svg width="20" height="20" fill="none" stroke="#7c3aed" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink: 0, marginTop: '2px' }}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span style={{ fontSize: '0.85rem', color: '#6d28d9', lineHeight: 1.5 }}>
+            This registration is for employees only. HR accounts are created by authorized HR administrators.
+          </span>
         </div>
 
-        {error && <div className="alert alert-error">{error}</div>}
-        {validating && <p style={{ color: '#6b7280' }}>Validating invitation...</p>}
+        {error && (
+          <div style={{ background: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.85rem', borderRadius: '10px', marginBottom: '1.5rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            {error}
+          </div>
+        )}
+        
+        {validating && (
+          <p style={{ color: '#8b5cf6', fontSize: '0.85rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <svg className="animate-spin" width="16" height="16" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            Validating invitation...
+          </p>
+        )}
 
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label className="form-label">Setup Token</label>
+          <div style={{ marginBottom: '1.25rem' }}>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Setup Token</label>
             <input
               type="text"
-              className="form-input"
               value={setupToken}
               onChange={(e) => setSetupToken(e.target.value.trim())}
               onBlur={handleTokenBlur}
               placeholder="Paste token from HR invite"
               required
+              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e5e7eb', background: '#f8fafc', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+              onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
+              onBlur={(e) => { e.target.style.borderColor = '#e5e7eb'; e.target.style.background = '#f8fafc'; e.target.style.boxShadow = 'none'; }}
             />
           </div>
-          <div className="form-group">
-            <label className="form-label">Full Name</label>
-            <input type="text" className="form-input" value={name} onChange={(e) => setName(e.target.value)} required />
+
+          <div style={{ marginBottom: '1.25rem' }}>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Full Name</label>
+            <input 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              placeholder="e.g. Jane Doe"
+              required 
+              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e5e7eb', background: '#f8fafc', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+              onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
+              onBlur={(e) => { e.target.style.borderColor = '#e5e7eb'; e.target.style.background = '#f8fafc'; e.target.style.boxShadow = 'none'; }}
+            />
           </div>
-          <div className="form-group">
-            <label className="form-label">Email</label>
+
+          <div style={{ marginBottom: '1.25rem' }}>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Corporate Email</label>
             <input
               type="email"
-              className="form-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               readOnly={!!tokenFromUrl && !!email}
+              placeholder="jane.doe@acmecorp.com"
               required
+              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e5e7eb', background: (!!tokenFromUrl && !!email) ? '#f3f4f6' : '#f8fafc', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit', color: (!!tokenFromUrl && !!email) ? '#6b7280' : '#1f2937' }}
+              onFocus={(e) => { if(!(!!tokenFromUrl && !!email)) { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; } }}
+              onBlur={(e) => { if(!(!!tokenFromUrl && !!email)) { e.target.style.borderColor = '#e5e7eb'; e.target.style.background = '#f8fafc'; e.target.style.boxShadow = 'none'; } }}
             />
           </div>
-          <div className="form-group">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-input" value={password} onChange={(e) => setPassword(e.target.value)} required />
+
+          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem' }}>
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Password</label>
+              <input 
+                type="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                placeholder="••••••••"
+                required 
+                style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e5e7eb', background: '#f8fafc', fontSize: '1rem', letterSpacing: password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+                onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
+                onBlur={(e) => { e.target.style.borderColor = '#e5e7eb'; e.target.style.background = '#f8fafc'; e.target.style.boxShadow = 'none'; }}
+              />
+            </div>
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Confirm Password</label>
+              <input 
+                type="password" 
+                value={confirm} 
+                onChange={(e) => setConfirm(e.target.value)} 
+                placeholder="••••••••"
+                required 
+                style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e5e7eb', background: '#f8fafc', fontSize: '1rem', letterSpacing: confirm ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+                onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
+                onBlur={(e) => { e.target.style.borderColor = '#e5e7eb'; e.target.style.background = '#f8fafc'; e.target.style.boxShadow = 'none'; }}
+              />
+            </div>
           </div>
-          <div className="form-group">
-            <label className="form-label">Confirm Password</label>
-            <input type="password" className="form-input" value={confirm} onChange={(e) => setConfirm(e.target.value)} required />
+
+          {/* Password Requirements Checklist */}
+          <div style={{ background: '#fcfaff', border: '1px solid #f3e8ff', borderRadius: '10px', padding: '1rem', marginBottom: '2rem' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasLength ? '#714b9c' : '#6b7280', transition: 'color 0.2s' }}>
+                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasLength ? '4px solid #714b9c' : '1px solid #d1d5db', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
+                At least 8 characters
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasSpecialChar ? '#714b9c' : '#6b7280', transition: 'color 0.2s' }}>
+                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasSpecialChar ? '4px solid #714b9c' : '1px solid #d1d5db', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
+                One special character (@, #, $)
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasUppercase ? '#714b9c' : '#6b7280', transition: 'color 0.2s' }}>
+                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasUppercase ? '4px solid #714b9c' : '1px solid #d1d5db', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
+                One uppercase letter
+              </li>
+            </ul>
           </div>
-          <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={loading || validating}>
-            {loading ? 'Setting up...' : 'Complete Setup'}
+
+          <button 
+            type="submit" 
+            disabled={loading || validating}
+            style={{ width: '100%', background: '#714b9c', color: '#fff', border: 'none', padding: '1.05rem', borderRadius: '10px', fontSize: '1.05rem', fontWeight: 600, cursor: (loading || validating) ? 'not-allowed' : 'pointer', opacity: (loading || validating) ? 0.7 : 1, transition: 'background 0.2s', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}
+            onMouseOver={(e) => { if(!(loading || validating)) e.currentTarget.style.background = '#5a3d7d'; }}
+            onMouseOut={(e) => { if(!(loading || validating)) e.currentTarget.style.background = '#714b9c'; }}
+          >
+            {loading ? (
+              <>
+                <svg className="animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Processing...
+              </>
+            ) : 'Create Employee Account'}
           </button>
         </form>
 
-        <p className="mt-3 text-center" style={{ color: '#6b7280', fontSize: '0.9rem' }}>
-          Already have an account? <Link to="/login">Sign in</Link>
+        <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: '#6b7280' }}>
+          Already have an account? <Link to="/login" style={{ color: '#4c1d95', fontWeight: 600, textDecoration: 'none' }} onMouseOver={(e) => e.target.style.textDecoration = 'underline'} onMouseOut={(e) => e.target.style.textDecoration = 'none'}>Log In</Link>
         </p>
       </div>
+
+      <style>{`
+        .animate-spin {
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 }
