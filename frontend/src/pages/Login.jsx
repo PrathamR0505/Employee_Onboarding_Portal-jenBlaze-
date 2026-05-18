@@ -41,7 +41,7 @@ export default function Login() {
       {/* Left Panel - Branding & Animation */}
       <div className="auth-left-panel" style={{
         flex: 0.75,
-        background: 'linear-gradient(135deg, #4A4A4A 0%, #303030 100%)',
+        background: 'linear-gradient(135deg, #2B2B2B 0%, #1A1A1A 100%)',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -51,10 +51,10 @@ export default function Login() {
         color: 'white'
       }}>
         <div className="animate-fade-in-right" style={{ position: 'relative', zIndex: 10, maxWidth: '440px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '3.2rem', fontWeight: 700, fontFamily: 'var(--font-display)', lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 4px 10px rgba(0,0,0,0.15)', letterSpacing: '-0.03em' }}>
+          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 4px 10px rgba(0,0,0,0.2)', letterSpacing: '-0.03em' }}>
             Welcome to<br />Hackaholics
           </h1>
-          <p style={{ fontSize: '1.05rem', lineHeight: 1.6, opacity: 0.85, fontFamily: 'var(--font-primary)' }}>
+          <p style={{ fontSize: '1.05rem', lineHeight: 1.6, opacity: 0.85 }}>
             Step into your new future. Our comprehensive portal streamlines every part of your professional integration, ensuring you have the tools you need from day one.
           </p>
         </div>
@@ -299,7 +299,7 @@ export default function Login() {
                   placeholder="name@company.com"
                   required
                   style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all var(--transition-normal)', fontFamily: 'inherit' }}
-                  onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.boxShadow = '0 0 0 3px rgba(109, 129, 150, 0.25)'; }}
+                  onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.1)'; }}
                   onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.boxShadow = 'none'; }}
                 />
               </div>
@@ -314,7 +314,7 @@ export default function Login() {
                     placeholder="••••••••"
                     required
                     style={{ width: '100%', padding: '0.85rem 2.5rem 0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-section)', fontSize: '1rem', letterSpacing: !showPassword && password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all var(--transition-normal)', fontFamily: 'inherit' }}
-                    onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(109, 129, 150, 0.25)'; }}
+                    onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.1)'; }}
                     onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; }}
                   />
                   <button
