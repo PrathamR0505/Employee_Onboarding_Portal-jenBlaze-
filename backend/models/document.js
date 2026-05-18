@@ -39,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    ocr_text: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     verified_by: {
       type: DataTypes.INTEGER,
       allowNull: true,

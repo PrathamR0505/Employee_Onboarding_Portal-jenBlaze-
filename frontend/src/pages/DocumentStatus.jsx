@@ -64,6 +64,21 @@ export default function DocumentStatus() {
     }
   };
 
+  const handleDownloadOCR = async (docId) => {
+    try {
+      const res = await api.get(`/download/${docId}/ocr`, { responseType: 'blob' });
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const a = document.createElement('a');
+      a.href = url;
+      const doc = documents.find((d) => d.id === docId);
+      a.download = `${(doc?.original_name || 'document').split('.')[0]}_ocr.txt`;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      setError('OCR data not available for this document.');
+    }
+  };
+
   const hasPending = documents.some((d) => d.status === 'pending');
   const mandatoryTypes = documentTypes.filter((t) => t.is_mandatory);
   const uploadedTypeIds = new Set(documents.map((d) => d.document_type_id));
@@ -121,9 +136,14 @@ export default function DocumentStatus() {
                     <td><StatusBadge docStatus={doc.status} /></td>
                     <td>{doc.hr_remark || '-'}</td>
                     <td>
-                      <button className="btn btn-sm btn-outline" onClick={() => handleDownload(doc.id)}>
-                        Download
-                      </button>
+                      <div className="flex gap-1">
+                        <button className="btn btn-sm btn-outline" onClick={() => handleDownload(doc.id)}>
+                          Download
+                        </button>
+                        <button className="btn btn-sm btn-outline" onClick={() => handleDownloadOCR(doc.id)}>
+                          OCR Data
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

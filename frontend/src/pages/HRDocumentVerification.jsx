@@ -107,6 +107,21 @@ export default function HRDocumentVerification() {
     }
   };
 
+  const handleDownloadOCR = async (docId) => {
+    try {
+      const res = await api.get(`/download/${docId}/ocr`, { responseType: 'blob' });
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const a = document.createElement('a');
+      a.href = url;
+      const doc = documents.find((d) => d.id === docId);
+      a.download = `${(doc?.original_name || 'document').split('.')[0]}_ocr.txt`;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      setError('OCR data not available for this document.');
+    }
+  };
+
   const goBack = () => {
     setSelectedEmployee(null);
     setEmployeeInfo(null);
@@ -189,6 +204,7 @@ export default function HRDocumentVerification() {
                     <td>
                       <div className="flex gap-1">
                         <button className="btn btn-sm btn-outline" onClick={() => handleDownload(doc.id)}>Download</button>
+                        <button className="btn btn-sm btn-outline" onClick={() => handleDownloadOCR(doc.id)}>OCR Data</button>
                         {doc.status !== 'approved' && (
                           <>
                             <button className="btn btn-sm btn-success" onClick={() => handleVerify(doc.id, 'approved')} disabled={actionLoading}>

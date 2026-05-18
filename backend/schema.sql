@@ -77,6 +77,7 @@ CREATE TABLE documents (
   file_size INTEGER NOT NULL,
   status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected')),
   hr_remark TEXT,
+  ocr_text TEXT,
   verified_by INTEGER REFERENCES users(id),
   verified_at TIMESTAMP WITH TIME ZONE,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
