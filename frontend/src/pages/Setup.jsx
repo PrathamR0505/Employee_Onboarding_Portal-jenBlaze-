@@ -77,43 +77,39 @@ export default function Setup() {
   };
 
   return (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      minHeight: '100vh', 
-      fontFamily: '"Inter", "Segoe UI", sans-serif',
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '100vh',
+      fontFamily: 'var(--font-primary)',
       position: 'relative',
       overflow: 'hidden',
-      background: '#fdfbff'
+      background: 'var(--bg-section)'
     }}>
-      {/* Background Blobs */}
-      <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(216,180,254,0.7) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(70px)', zIndex: 0 }}></div>
-      <div style={{ position: 'absolute', bottom: '-15%', right: '-10%', width: '55vw', height: '55vw', background: 'radial-gradient(circle, rgba(192,132,252,0.6) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(90px)', zIndex: 0 }}></div>
-
-      <div style={{ 
-        position: 'relative', 
-        zIndex: 10, 
-        background: '#BAC8B1', 
-        borderRadius: '24px', 
-        padding: '3rem 3.5rem', 
-        width: '100%', 
-        maxWidth: '560px', 
-        boxShadow: '0 25px 50px -12px rgba(124, 58, 237, 0.15)', 
-        border: '1px solid rgba(237, 233, 254, 0.8)' 
+      <div style={{
+        position: 'relative',
+        zIndex: 10,
+        background: 'var(--bg-card)',
+        borderRadius: '24px',
+        padding: '3rem 3.5rem',
+        width: '100%',
+        maxWidth: '560px',
+        boxShadow: 'var(--shadow-card)',
+        border: '1px solid var(--border-color)'
       }}>
-        
-        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#4c1d95', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
+
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
           Create Employee Account
         </h1>
-        <p style={{ color: '#404E3B', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
           Complete your registration to access the HR portal.
         </p>
 
         {/* Info Alert */}
-        <div style={{ background: '#BAC8B1', border: '1px solid #BAC8B1', borderRadius: '12px', padding: '1rem', display: 'flex', gap: '0.75rem', marginBottom: '2rem' }}>
-          <svg width="20" height="20" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink: 0, marginTop: '2px' }}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span style={{ fontSize: '0.85rem', color: '#7B9669', lineHeight: 1.5 }}>
+        <div style={{ background: 'var(--bg-section)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem', display: 'flex', gap: '0.75rem', marginBottom: '2rem' }}>
+          <svg width="20" height="20" fill="none" stroke="var(--primary-brand)" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink: 0, marginTop: '2px' }}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
             This registration is for employees only. HR accounts are created by authorized HR administrators.
           </span>
         </div>
@@ -124,9 +120,9 @@ export default function Setup() {
             {error}
           </div>
         )}
-        
+
         {validating && (
-          <p style={{ color: '#7B9669', fontSize: '0.85rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <svg className="animate-spin" width="16" height="16" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
             Validating invitation...
           </p>
@@ -134,7 +130,7 @@ export default function Setup() {
 
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1.25rem' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Setup Token</label>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Setup Token</label>
             <input
               type="text"
               value={setupToken}
@@ -142,28 +138,28 @@ export default function Setup() {
               onBlur={handleTokenBlur}
               placeholder="Paste token from HR invite"
               required
-              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: '#E6E6E6', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-              onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
-              onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
+              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-section)', fontSize: '0.95rem', color: 'var(--text-primary)', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+              onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = 'var(--bg-card)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.05)'; }}
+              onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; }}
             />
           </div>
 
           <div style={{ marginBottom: '1.25rem' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Full Name</label>
-            <input 
-              type="text" 
-              value={name} 
-              onChange={(e) => setName(e.target.value)} 
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Full Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Jane Doe"
-              required 
-              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: '#E6E6E6', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-              onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
-              onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
+              required
+              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-section)', fontSize: '0.95rem', color: 'var(--text-primary)', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+              onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = 'var(--bg-card)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.05)'; }}
+              onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; }}
             />
           </div>
 
           <div style={{ marginBottom: '1.25rem' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Corporate Email</label>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Corporate Email</label>
             <input
               type="email"
               value={email}
@@ -171,65 +167,65 @@ export default function Setup() {
               readOnly={!!tokenFromUrl && !!email}
               placeholder="jane.doe@acmecorp.com"
               required
-              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: (!!tokenFromUrl && !!email) ? '#f3f4f6' : '#E6E6E6', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit', color: (!!tokenFromUrl && !!email) ? '#6b7280' : '#1f2937' }}
-              onFocus={(e) => { if(!(!!tokenFromUrl && !!email)) { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; } }}
-              onBlur={(e) => { if(!(!!tokenFromUrl && !!email)) { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; } }}
+              style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: (!!tokenFromUrl && !!email) ? 'var(--bg-section)' : 'var(--bg-section)', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit', color: (!!tokenFromUrl && !!email) ? 'var(--text-secondary)' : 'var(--text-primary)' }}
+              onFocus={(e) => { if (!(!!tokenFromUrl && !!email)) { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = 'var(--bg-card)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.05)'; } }}
+              onBlur={(e) => { if (!(!!tokenFromUrl && !!email)) { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; } }}
             />
           </div>
 
           <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem' }}>
             <div style={{ flex: 1 }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Password</label>
-              <input 
-                type="password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                required 
-                style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: '#E6E6E6', fontSize: '1rem', letterSpacing: password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-                onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
-                onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
+                required
+                style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-section)', fontSize: '1rem', color: 'var(--text-primary)', letterSpacing: password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+                onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = 'var(--bg-card)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.05)'; }}
+                onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div style={{ flex: 1 }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Confirm Password</label>
-              <input 
-                type="password" 
-                value={confirm} 
-                onChange={(e) => setConfirm(e.target.value)} 
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Confirm Password</label>
+              <input
+                type="password"
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
                 placeholder="••••••••"
-                required 
-                style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: '#E6E6E6', fontSize: '1rem', letterSpacing: confirm ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-                onFocus={(e) => { e.target.style.borderColor = '#a78bfa'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)'; }}
-                onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
+                required
+                style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-section)', fontSize: '1rem', color: 'var(--text-primary)', letterSpacing: confirm ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+                onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = 'var(--bg-card)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.05)'; }}
+                onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
           </div>
 
           {/* Password Requirements Checklist */}
-          <div style={{ background: '#BAC8B1', border: '1px solid #BAC8B1', borderRadius: '10px', padding: '1rem', marginBottom: '2rem' }}>
+          <div style={{ background: 'var(--bg-section)', border: '1px solid var(--border-color)', borderRadius: '10px', padding: '1rem', marginBottom: '2rem' }}>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasLength ? '#7B9669' : '#6b7280', transition: 'color 0.2s' }}>
-                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasLength ? '4px solid #7B9669' : '1px solid #9AA991', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasLength ? 'var(--primary-brand)' : 'var(--text-secondary)', transition: 'color 0.2s' }}>
+                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasLength ? '4px solid var(--primary-brand)' : '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
                 At least 8 characters
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasSpecialChar ? '#7B9669' : '#6b7280', transition: 'color 0.2s' }}>
-                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasSpecialChar ? '4px solid #7B9669' : '1px solid #9AA991', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasSpecialChar ? 'var(--primary-brand)' : 'var(--text-secondary)', transition: 'color 0.2s' }}>
+                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasSpecialChar ? '4px solid var(--primary-brand)' : '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
                 One special character (@, #, $)
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasUppercase ? '#7B9669' : '#6b7280', transition: 'color 0.2s' }}>
-                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasUppercase ? '4px solid #7B9669' : '1px solid #9AA991', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: hasUppercase ? 'var(--primary-brand)' : 'var(--text-secondary)', transition: 'color 0.2s' }}>
+                <div style={{ width: '16px', height: '16px', borderRadius: '50%', border: hasUppercase ? '4px solid var(--primary-brand)' : '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}></div>
                 One uppercase letter
               </li>
             </ul>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={loading || validating}
-            style={{ width: '100%', background: '#7B9669', color: '#fff', border: 'none', padding: '1.05rem', borderRadius: '10px', fontSize: '1.05rem', fontWeight: 600, cursor: (loading || validating) ? 'not-allowed' : 'pointer', opacity: (loading || validating) ? 0.7 : 1, transition: 'background 0.2s', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}
-            onMouseOver={(e) => { if(!(loading || validating)) e.currentTarget.style.background = '#5a3d7d'; }}
-            onMouseOut={(e) => { if(!(loading || validating)) e.currentTarget.style.background = '#7B9669'; }}
+            style={{ width: '100%', background: 'var(--primary-brand)', color: 'var(--text-inverse)', border: 'none', padding: '1.05rem', borderRadius: '10px', fontSize: '1.05rem', fontWeight: 600, cursor: (loading || validating) ? 'not-allowed' : 'pointer', opacity: (loading || validating) ? 0.7 : 1, transition: 'background 0.2s', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}
+            onMouseOver={(e) => { if (!(loading || validating)) e.currentTarget.style.background = 'var(--primary-brand-hover)'; }}
+            onMouseOut={(e) => { if (!(loading || validating)) e.currentTarget.style.background = 'var(--primary-brand)'; }}
           >
             {loading ? (
               <>
@@ -240,8 +236,8 @@ export default function Setup() {
           </button>
         </form>
 
-        <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: '#404E3B' }}>
-          Already have an account? <Link to="/login" style={{ color: '#4c1d95', fontWeight: 600, textDecoration: 'none' }} onMouseOver={(e) => e.target.style.textDecoration = 'underline'} onMouseOut={(e) => e.target.style.textDecoration = 'none'}>Log In</Link>
+        <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+          Already have an account? <Link to="/login" style={{ color: 'var(--primary-brand)', fontWeight: 600, textDecoration: 'none' }} onMouseOver={(e) => e.target.style.textDecoration = 'underline'} onMouseOut={(e) => e.target.style.textDecoration = 'none'}>Log In</Link>
         </p>
       </div>
 

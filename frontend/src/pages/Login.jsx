@@ -36,90 +36,232 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-page-container" style={{ display: 'flex', minHeight: '100vh', fontFamily: '"Inter", "Segoe UI", sans-serif' }}>
-      
+    <div className="auth-page-container" style={{ display: 'flex', minHeight: '100vh', fontFamily: 'var(--font-primary)' }}>
+
       {/* Left Panel - Branding & Animation */}
-      <div className="auth-left-panel" style={{ 
-        flex: 1, 
-        background: 'linear-gradient(135deg, #7B9669 0%, #6C8480 100%)', 
-        position: 'relative', 
+      <div className="auth-left-panel" style={{
+        flex: 0.75,
+        background: 'linear-gradient(135deg, #2B2B2B 0%, #1A1A1A 100%)',
+        position: 'relative',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 6rem',
+        padding: '4rem',
         color: 'white'
       }}>
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '500px' }}>
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-            Welcome to<br/>Hackaholics
+        <div className="animate-fade-in-right" style={{ position: 'relative', zIndex: 10, maxWidth: '440px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 4px 10px rgba(0,0,0,0.2)', letterSpacing: '-0.03em' }}>
+            Welcome to<br />Hackaholics
           </h1>
-          <p style={{ fontSize: '1.1rem', lineHeight: 1.6, opacity: 0.9 }}>
+          <p style={{ fontSize: '1.05rem', lineHeight: 1.6, opacity: 0.85 }}>
             Step into your new future. Our comprehensive portal streamlines every part of your professional integration, ensuring you have the tools you need from day one.
           </p>
         </div>
 
-        {/* Animated Glassmorphic Shapes */}
+        {/* Animated Glassmorphic Shapes & Stardust */}
+        {/* Object 1: Large glass circle */}
         <div style={{
           position: 'absolute', width: '180px', height: '180px', borderRadius: '50%',
-          background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)',
-          top: '55%', left: '15%', animation: 'float 6s ease-in-out infinite'
+          background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.1)',
+          top: '55%', left: '10%', animation: 'float 6s ease-in-out infinite'
         }}></div>
+
+        {/* Object 2: Rounded rectangle */}
         <div style={{
           position: 'absolute', width: '100px', height: '100px', borderRadius: '20px',
-          background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)',
-          top: '55%', right: '25%', animation: 'float 8s ease-in-out infinite reverse', transform: 'rotate(15deg)'
+          background: 'rgba(255, 255, 255, 0.04)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.08)',
+          top: '50%', right: '20%', animation: 'float 8s ease-in-out infinite reverse', transform: 'rotate(15deg)'
         }}></div>
+
+        {/* Object 3: Glass card */}
         <div style={{
           position: 'absolute', width: '220px', height: '140px', borderRadius: '24px',
-          background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.3)',
-          top: '65%', right: '15%', animation: 'float 7s ease-in-out infinite 1s'
+          background: 'rgba(255, 255, 255, 0.06)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.1)',
+          top: '68%', right: '10%', animation: 'float 7s ease-in-out infinite 1s'
         }}></div>
-        
-        {/* Extra floating elements */}
+
+        {/* Object 4: Medium circle */}
         <div style={{
           position: 'absolute', width: '60px', height: '60px', borderRadius: '50%',
-          background: 'rgba(255, 255, 255, 0.08)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.15)',
-          top: '25%', right: '15%', animation: 'float 5s ease-in-out infinite 2s'
+          background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.08)',
+          top: '25%', right: '10%', animation: 'float 5s ease-in-out infinite 2s'
         }}></div>
+
+        {/* Object 5: Rounded square */}
         <div style={{
           position: 'absolute', width: '80px', height: '80px', borderRadius: '15px',
-          background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(5px)', border: '1px solid rgba(255,255,255,0.1)',
-          top: '15%', left: '10%', animation: 'float 9s ease-in-out infinite reverse', transform: 'rotate(-25deg)'
+          background: 'rgba(255, 255, 255, 0.02)', backdropFilter: 'blur(5px)', border: '1px solid rgba(255,255,255,0.05)',
+          top: '15%', left: '8%', animation: 'float 9s ease-in-out infinite reverse', transform: 'rotate(-25deg)'
         }}></div>
+
+        {/* Object 6: Wide capsule */}
         <div style={{
           position: 'absolute', width: '140px', height: '40px', borderRadius: '20px',
-          background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)',
-          bottom: '10%', left: '35%', animation: 'float 7.5s ease-in-out infinite 0.5s', transform: 'rotate(5deg)'
+          background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.1)',
+          bottom: '8%', left: '30%', animation: 'float 7.5s ease-in-out infinite 0.5s', transform: 'rotate(5deg)'
+        }}></div>
+
+        {/* Object 7: Large Glass Ring */}
+        <div style={{
+          position: 'absolute', width: '120px', height: '120px', borderRadius: '50%',
+          border: '6px solid rgba(255, 255, 255, 0.04)',
+          top: '8%', right: '30%', animation: 'float 10s ease-in-out infinite'
+        }}></div>
+
+        {/* Object 8: Mini glowing stardust particle */}
+        <div style={{
+          position: 'absolute', width: '8px', height: '8px', borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.35)', boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)',
+          top: '20%', left: '42%', animation: 'float 4s ease-in-out infinite 1.5s'
+        }}></div>
+
+        {/* Object 9: Another mini stardust particle */}
+        <div style={{
+          position: 'absolute', width: '12px', height: '12px', borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.25)',
+          top: '38%', left: '8%', animation: 'float 5s ease-in-out infinite 0.7s'
+        }}></div>
+
+        {/* Object 10: Elegant vertical capsule */}
+        <div style={{
+          position: 'absolute', width: '36px', height: '100px', borderRadius: '20px',
+          background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.06)',
+          top: '28%', right: '4%', animation: 'float 8.5s ease-in-out infinite 2.2s', transform: 'rotate(-40deg)'
+        }}></div>
+
+        {/* Object 11: Sleek hollow square ring */}
+        <div style={{
+          position: 'absolute', width: '80px', height: '80px', borderRadius: '16px',
+          border: '3px dashed rgba(255, 255, 255, 0.03)',
+          top: '78%', left: '3%', animation: 'float 9.5s ease-in-out infinite 1.8s', transform: 'rotate(45deg)'
+        }}></div>
+
+        {/* Object 12: Bright star dot */}
+        <div style={{
+          position: 'absolute', width: '6px', height: '6px', borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.5)', boxShadow: '0 0 6px #fff',
+          top: '82%', right: '35%', animation: 'float 3.5s ease-in-out infinite 0.3s'
+        }}></div>
+
+        {/* Object 13: Floating soft glass pill */}
+        <div style={{
+          position: 'absolute', width: '150px', height: '44px', borderRadius: '22px',
+          background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255, 255, 255, 0.08)',
+          top: '5%', left: '22%', animation: 'float 6.8s ease-in-out infinite 1.1s', transform: 'rotate(-12deg)'
+        }}></div>
+
+        {/* Object 14: Small stardust */}
+        <div style={{
+          position: 'absolute', width: '10px', height: '10px', borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.15)',
+          top: '90%', left: '16%', animation: 'float 4.8s ease-in-out infinite 2.5s'
+        }}></div>
+
+        {/* Object 15: Abstract hollow circle ring */}
+        <div style={{
+          position: 'absolute', width: '50px', height: '50px', borderRadius: '50%',
+          border: '3px solid rgba(255, 255, 255, 0.05)',
+          bottom: '22%', left: '45%', animation: 'float 7.2s ease-in-out infinite 0.9s'
+        }}></div>
+
+        {/* Object 16: Small dashed ring */}
+        <div style={{
+          position: 'absolute', width: '45px', height: '45px', borderRadius: '50%',
+          border: '2px dashed rgba(255,255,255,0.06)',
+          top: '45%', left: '48%', animation: 'float 7.8s ease-in-out infinite reverse 1.2s'
+        }}></div>
+
+        {/* Object 17: Sleek vertical capsule */}
+        <div style={{
+          position: 'absolute', width: '24px', height: '70px', borderRadius: '12px',
+          background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)',
+          top: '60%', left: '5%', animation: 'float 8.8s ease-in-out infinite 0.2s', transform: 'rotate(25deg)'
+        }}></div>
+
+        {/* Object 18: Glowing stardust */}
+        <div style={{
+          position: 'absolute', width: '10px', height: '10px', borderRadius: '50%',
+          background: 'rgba(255,255,255,0.3)', boxShadow: '0 0 10px rgba(255,255,255,0.4)',
+          top: '72%', left: '35%', animation: 'float 4.2s ease-in-out infinite 0.5s'
+        }}></div>
+
+        {/* Object 19: Tilted pill */}
+        <div style={{
+          position: 'absolute', width: '90px', height: '28px', borderRadius: '14px',
+          background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)',
+          top: '12%', right: '8%', animation: 'float 6.4s ease-in-out infinite reverse 2.1s', transform: 'rotate(-15deg)'
+        }}></div>
+
+        {/* Object 20: Dotted glow dot */}
+        <div style={{
+          position: 'absolute', width: '5px', height: '5px', borderRadius: '50%',
+          background: '#fff', boxShadow: '0 0 6px #fff',
+          top: '52%', right: '42%', animation: 'float 3.2s ease-in-out infinite 1.7s'
+        }}></div>
+
+        {/* Object 21: Medium dashed square ring */}
+        <div style={{
+          position: 'absolute', width: '60px', height: '60px', borderRadius: '12px',
+          border: '2px dashed rgba(255,255,255,0.04)',
+          top: '32%', left: '25%', animation: 'float 9.2s ease-in-out infinite 0.9s', transform: 'rotate(12deg)'
+        }}></div>
+
+        {/* Object 22: High-blur soft sphere */}
+        <div style={{
+          position: 'absolute', width: '150px', height: '150px', borderRadius: '50%',
+          background: 'rgba(255,255,255,0.02)', backdropFilter: 'blur(15px)',
+          top: '-5%', right: '-2%', animation: 'float 11s ease-in-out infinite reverse'
+        }}></div>
+
+        {/* Object 23: Miniature particle */}
+        <div style={{
+          position: 'absolute', width: '7px', height: '7px', borderRadius: '50%',
+          background: 'rgba(255,255,255,0.2)',
+          top: '88%', right: '18%', animation: 'float 5.2s ease-in-out infinite 2s'
+        }}></div>
+
+        {/* Object 24: Hollow ring */}
+        <div style={{
+          position: 'absolute', width: '80px', height: '80px', borderRadius: '50%',
+          border: '3px solid rgba(255,255,255,0.03)',
+          top: '38%', right: '32%', animation: 'float 8s ease-in-out infinite 1.4s'
+        }}></div>
+
+        {/* Object 25: Tilted square */}
+        <div style={{
+          position: 'absolute', width: '40px', height: '40px', borderRadius: '8px',
+          background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)',
+          bottom: '18%', right: '38%', animation: 'float 6.9s ease-in-out infinite 0.4s', transform: 'rotate(33deg)'
         }}></div>
       </div>
 
       {/* Right Panel - Login Form */}
-      <div className="auth-right-panel" style={{ 
-        flex: 1, 
-        background: '#BAC8B1', 
-        display: 'flex', 
-        alignItems: 'center', 
+      <div className="auth-right-panel" style={{
+        flex: 1.25,
+        background: 'var(--bg-section)',
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem'
       }}>
         <div style={{ width: '100%', maxWidth: '440px' }}>
-          <div style={{ background: '#BAC8B1', borderRadius: '24px', padding: '3rem 2.5rem', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', border: '1px solid #f3f4f6' }}>
-            
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#404E3B', marginBottom: '0.5rem' }}>Access Your Portal</h2>
-            <p style={{ color: '#404E3B', fontSize: '0.95rem', marginBottom: '2rem' }}>Please log in to your account to continue.</p>
+          <div className="animate-scale-in" style={{ background: 'var(--bg-card)', borderRadius: '24px', padding: '3rem 2.5rem', boxShadow: 'var(--shadow-card)', border: '1px solid var(--border-color)' }}>
+
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Access Your Portal</h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem' }}>Please log in to your account to continue.</p>
 
             {/* Tabs */}
-            <div style={{ display: 'flex', borderBottom: '2px solid #f3f4f6', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', borderBottom: '2px solid var(--border-color)', marginBottom: '1.5rem' }}>
               <button
                 type="button"
                 onClick={() => { setTab('employee'); setError(''); }}
                 style={{
                   flex: 1, padding: '0.75rem 0', background: 'none', border: 'none', cursor: 'pointer',
                   fontSize: '0.95rem', fontWeight: tab === 'employee' ? 600 : 500,
-                  color: tab === 'employee' ? '#7B9669' : '#9ca3af',
-                  borderBottom: tab === 'employee' ? '2px solid #7B9669' : '2px solid transparent',
-                  marginBottom: '-2px', transition: 'all 0.2s ease', outline: 'none'
+                  color: tab === 'employee' ? 'var(--primary-brand)' : 'var(--text-muted)',
+                  borderBottom: tab === 'employee' ? '2px solid var(--primary-brand)' : '2px solid transparent',
+                  marginBottom: '-2px', transition: 'all var(--transition-normal)', outline: 'none'
                 }}
               >
                 Employee Login
@@ -130,30 +272,18 @@ export default function Login() {
                 style={{
                   flex: 1, padding: '0.75rem 0', background: 'none', border: 'none', cursor: 'pointer',
                   fontSize: '0.95rem', fontWeight: tab === 'hr' ? 600 : 500,
-                  color: tab === 'hr' ? '#7B9669' : '#9ca3af',
-                  borderBottom: tab === 'hr' ? '2px solid #7B9669' : '2px solid transparent',
-                  marginBottom: '-2px', transition: 'all 0.2s ease', outline: 'none'
+                  color: tab === 'hr' ? 'var(--primary-brand)' : 'var(--text-muted)',
+                  borderBottom: tab === 'hr' ? '2px solid var(--primary-brand)' : '2px solid transparent',
+                  marginBottom: '-2px', transition: 'all var(--transition-normal)', outline: 'none'
                 }}
               >
                 HR Login
               </button>
             </div>
 
-            {/* Context Alert */}
-            {tab === 'employee' ? (
-              <div style={{ background: '#E6E6E6', border: '1px solid #e9d5ff', borderRadius: '8px', padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="18" height="18" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span style={{ fontSize: '0.85rem', color: '#7B9669', fontWeight: 500 }}>New here? Create your employee account below.</span>
-              </div>
-            ) : (
-              <div style={{ background: '#E6E6E6', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="18" height="18" fill="none" stroke="#64748b" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                <span style={{ fontSize: '0.85rem', color: '#404E3B', fontWeight: 500 }}>HR accounts are securely provisioned.</span>
-              </div>
-            )}
 
             {error && (
-              <div style={{ background: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.85rem', borderRadius: '8px', marginBottom: '1.5rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem', animation: 'fadeIn 0.3s' }}>
+              <div style={{ background: 'var(--status-rejected-bg)', border: '1px solid var(--status-rejected-border)', color: 'var(--status-rejected-text)', padding: '0.85rem', borderRadius: '8px', marginBottom: '1.5rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem', animation: 'fadeIn 0.3s' }}>
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 {error}
               </div>
@@ -161,21 +291,21 @@ export default function Login() {
 
             <form onSubmit={handleSubmit}>
               <div style={{ marginBottom: '1.25rem' }}>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Work Email Address</label>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Work Email Address</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
                   required
-                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-                  onFocus={(e) => { e.target.style.borderColor = '#7B9669'; e.target.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)'; }}
-                  onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.boxShadow = 'none'; }}
+                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all var(--transition-normal)', fontFamily: 'inherit' }}
+                  onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.1)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.boxShadow = 'none'; }}
                 />
               </div>
 
               <div style={{ marginBottom: '2rem', position: 'relative' }}>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#374151', marginBottom: '0.5rem' }}>Password</label>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Password</label>
                 <div style={{ position: 'relative' }}>
                   <input
                     type={showPassword ? 'text' : 'password'}
@@ -183,11 +313,11 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     required
-                    style={{ width: '100%', padding: '0.85rem 2.5rem 0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: '#E6E6E6', fontSize: '1rem', letterSpacing: !showPassword && password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-                    onFocus={(e) => { e.target.style.borderColor = '#7B9669'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
+                    style={{ width: '100%', padding: '0.85rem 2.5rem 0.85rem 1rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-section)', fontSize: '1rem', letterSpacing: !showPassword && password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all var(--transition-normal)', fontFamily: 'inherit' }}
+                    onFocus={(e) => { e.target.style.borderColor = 'var(--primary-brand)'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(43, 43, 43, 0.1)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'var(--border-color)'; e.target.style.background = 'var(--bg-section)'; e.target.style.boxShadow = 'none'; }}
                   />
-                  <button 
+                  <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: '#9ca3af', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
@@ -201,28 +331,26 @@ export default function Login() {
                 </div>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={loading}
-                style={{ width: '100%', background: '#7B9669', color: '#fff', border: 'none', padding: '0.95rem', borderRadius: '10px', fontSize: '1rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.8 : 1, transition: 'background 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
-                onMouseOver={(e) => { if(!loading) e.currentTarget.style.background = '#7B9669'; }}
-                onMouseOut={(e) => { if(!loading) e.currentTarget.style.background = '#7B9669'; }}
+                style={{ width: '100%', background: 'var(--primary-brand)', color: 'var(--text-inverse)', border: 'none', padding: '0.95rem', borderRadius: '10px', fontSize: '1rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.8 : 1, transition: 'background var(--transition-normal)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+                onMouseOver={(e) => { if (!loading) e.currentTarget.style.background = 'var(--primary-brand-hover)'; }}
+                onMouseOut={(e) => { if (!loading) e.currentTarget.style.background = 'var(--primary-brand)'; }}
               >
-                {loading ? 'Authenticating...' : 'Sign In to Portal'} 
+                {loading ? 'Authenticating...' : 'Sign In to Portal'}
                 {!loading && <span style={{ marginLeft: '4px' }}>→</span>}
               </button>
             </form>
 
-            {tab === 'employee' && (
-              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <Link to="/setup" style={{ fontSize: '0.9rem', color: '#404E3B', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseOver={(e) => e.target.style.color = '#7B9669'}
-                  onMouseOut={(e) => e.target.style.color = '#6b7280'}
-                >
-                  Have an invite? Complete first-time setup
-                </Link>
-              </div>
-            )}
+            <div style={{ textAlign: 'center', marginTop: '1.5rem', visibility: tab === 'employee' ? 'visible' : 'hidden' }}>
+              <Link to="/setup" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color var(--transition-normal)' }}
+                onMouseOver={(e) => e.target.style.color = 'var(--primary-brand)'}
+                onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}
+              >
+                Have an invite? Complete first-time setup
+              </Link>
+            </div>
 
           </div>
         </div>

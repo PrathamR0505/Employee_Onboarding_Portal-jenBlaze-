@@ -80,7 +80,7 @@ export default function OnboardingChecklist() {
 
       {error && <div className="alert alert-error">{error}</div>}
 
-      <div className="card">
+      <div className="card animate-scale-in stagger-2">
         {checklist.map((item) => (
           <div key={item.id} className="checklist-item">
             <input
@@ -113,7 +113,7 @@ export default function OnboardingChecklist() {
           )}
         </div>
       ) : canConfirmJoining ? (
-        <div className="card mt-2">
+        <div className="card mt-2 animate-scale-in stagger-3">
           <h3 style={{ marginBottom: '0.75rem' }}>Confirm Joining Date</h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9rem' }}>
             Complete all mandatory checklist items, then select your joining date.

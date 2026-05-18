@@ -111,7 +111,7 @@ export default function DocumentStatus() {
       {error && <div className="alert alert-error">{error}</div>}
       {success && <div className="alert alert-success">{success}</div>}
 
-      <div className="card">
+      <div className="card animate-scale-in stagger-2">
         {documents.length === 0 ? (
           <p style={{ color: '#6b7280' }}>No documents uploaded yet.</p>
         ) : (
