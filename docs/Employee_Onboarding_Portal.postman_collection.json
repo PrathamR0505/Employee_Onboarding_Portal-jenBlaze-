@@ -1,0 +1,207 @@
+{
+  "info": {
+    "name": "Employee Onboarding Portal API",
+    "description": "Module 3 — REST API collection for Employee Onboarding Portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "token", "value": "" },
+    { "key": "setupToken", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login HR",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"hr@company.com\",\n  \"password\": \"hr123456\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        },
+        {
+          "name": "Validate Setup Token",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/auth/setup/validate?token={{setupToken}}"
+          }
+        },
+        {
+          "name": "First-time Setup",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"setup_token\": \"{{setupToken}}\",\n  \"password\": \"emp123456\",\n  \"name\": \"New Hire Demo\",\n  \"email\": \"newhire@example.com\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/setup"
+          }
+        },
+        {
+          "name": "Get Me",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/auth/me"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/profile"
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"9876543210\",\n  \"date_of_birth\": \"1995-06-15\",\n  \"gender\": \"male\",\n  \"address\": \"123 Main St\",\n  \"city\": \"Mumbai\",\n  \"state\": \"Maharashtra\",\n  \"postal_code\": \"400001\",\n  \"bank_account_number\": \"12345678901\",\n  \"pan_number\": \"ABCDE1234F\",\n  \"emergency_contact_name\": \"Jane Doe\",\n  \"emergency_contact_phone\": \"9876543211\",\n  \"education_json\": [{ \"degree\": \"B.Tech\", \"institution\": \"Mumbai University\", \"year\": 2017 }]\n}"
+            },
+            "url": "{{baseUrl}}/api/profile"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "item": [
+        {
+          "name": "List Document Types",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/documents/types"
+          }
+        },
+        {
+          "name": "My Documents",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/documents/my"
+          }
+        },
+        {
+          "name": "Submit Documents",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/documents/submit"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Checklist",
+      "item": [
+        {
+          "name": "Get Checklist",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/checklist"
+          }
+        },
+        {
+          "name": "Toggle Checklist Item",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/checklist/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Joining",
+      "item": [
+        {
+          "name": "Confirm Joining (Employee)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"joining_date\": \"2026-06-15\"\n}"
+            },
+            "url": "{{baseUrl}}/api/joining/confirm"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin (HR)",
+      "item": [
+        {
+          "name": "Onboarding Overview",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/admin/onboarding/overview"
+          }
+        },
+        {
+          "name": "Employee Documents",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/admin/documents/1"
+          }
+        },
+        {
+          "name": "Verify Document",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"approved\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/documents/1/verify"
+          }
+        },
+        {
+          "name": "Invite Employee",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"newhire@example.com\",\n  \"name\": \"New Hire\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/employees/invite"
+          }
+        }
+      ]
+    }
+  ]
+}
