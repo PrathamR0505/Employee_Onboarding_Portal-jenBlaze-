@@ -124,8 +124,10 @@ dist-ssr
 # VSCode
 .vscode/
 
-# Build artifacts
+# Build artifacts and uploads
 frontend/dist
 frontend/build
 backend/build
 backend/dist
+
+
