@@ -50,13 +50,13 @@ export default function HREmployeeInvite() {
         
         {/* Centered Header */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <div style={{ width: '72px', height: '72px', background: '#f3e8ff', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7c3aed', boxShadow: '0 8px 20px rgba(124, 58, 237, 0.15)', margin: '0 auto 1.5rem' }}>
+          <div style={{ width: '72px', height: '72px', background: '#BAC8B1', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B9669', boxShadow: '0 8px 20px rgba(124, 58, 237, 0.15)', margin: '0 auto 1.5rem' }}>
             <svg width="36" height="36" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
             </svg>
           </div>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1f2937', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>Invite Employee</h1>
-          <p style={{ fontSize: '1.05rem', color: '#6b7280', maxWidth: '420px', margin: '0 auto', lineHeight: '1.6' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#404E3B', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>Invite Employee</h1>
+          <p style={{ fontSize: '1.05rem', color: '#404E3B', maxWidth: '420px', margin: '0 auto', lineHeight: '1.6' }}>
             Generate a secure setup token to welcome a new hire to the team.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function HREmployeeInvite() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%', maxWidth: '500px' }}>
           {/* Main Form Card */}
-          <div className="card" style={{ padding: '3rem 2.5rem', borderRadius: '24px', border: '1px solid #ede9fe', boxShadow: '0 20px 40px -15px rgba(124, 58, 237, 0.1)', background: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+          <div className="card" style={{ padding: '3rem 2.5rem', borderRadius: '24px', border: '1px solid #BAC8B1', boxShadow: '0 20px 40px -15px rgba(124, 58, 237, 0.1)', background: '#BAC8B1', position: 'relative', overflow: 'hidden' }}>
             {/* Decorative background element */}
             <div style={{ position: 'absolute', top: '-50px', left: '-50px', width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(243,232,255,1) 0%, rgba(255,255,255,0) 70%)', zIndex: 0 }}></div>
             
@@ -83,10 +83,10 @@ export default function HREmployeeInvite() {
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
                     required 
-                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '14px', border: '2px solid #f3f4f6', background: '#f9fafb', fontSize: '1.05rem', color: '#1f2937', outline: 'none', transition: 'all 0.2s ease', boxSizing: 'border-box', fontFamily: 'inherit' }}
+                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '14px', border: '2px solid #f3f4f6', background: '#E6E6E6', fontSize: '1.05rem', color: '#404E3B', outline: 'none', transition: 'all 0.2s ease', boxSizing: 'border-box', fontFamily: 'inherit' }}
                     placeholder="e.g. Jane Doe"
                     onFocus={(e) => { e.target.style.borderColor = '#c4b5fd'; e.target.style.background = '#ffffff'; e.target.style.boxShadow = '0 0 0 4px rgba(139, 92, 246, 0.1)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = '#f3f4f6'; e.target.style.background = '#f9fafb'; e.target.style.boxShadow = 'none'; }}
+                    onBlur={(e) => { e.target.style.borderColor = '#f3f4f6'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
                   />
                 </div>
                 <div style={{ marginBottom: '2.5rem' }}>
@@ -96,16 +96,16 @@ export default function HREmployeeInvite() {
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                     required 
-                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '14px', border: '2px solid #f3f4f6', background: '#f9fafb', fontSize: '1.05rem', color: '#1f2937', outline: 'none', transition: 'all 0.2s ease', boxSizing: 'border-box', fontFamily: 'inherit' }}
+                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '14px', border: '2px solid #f3f4f6', background: '#E6E6E6', fontSize: '1.05rem', color: '#404E3B', outline: 'none', transition: 'all 0.2s ease', boxSizing: 'border-box', fontFamily: 'inherit' }}
                     placeholder="jane.doe@acme.com"
                     onFocus={(e) => { e.target.style.borderColor = '#c4b5fd'; e.target.style.background = '#ffffff'; e.target.style.boxShadow = '0 0 0 4px rgba(139, 92, 246, 0.1)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = '#f3f4f6'; e.target.style.background = '#f9fafb'; e.target.style.boxShadow = 'none'; }}
+                    onBlur={(e) => { e.target.style.borderColor = '#f3f4f6'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
                   />
                 </div>
                 <button 
                   type="submit" 
                   disabled={loading}
-                  style={{ width: '100%', background: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)', color: '#fff', border: 'none', padding: '1.1rem', borderRadius: '14px', fontSize: '1.1rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, transition: 'all 0.2s ease', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', boxShadow: '0 8px 20px -6px rgba(109, 40, 217, 0.5)', fontFamily: 'inherit' }}
+                  style={{ width: '100%', background: 'linear-gradient(135deg, #7B9669 0%, #6C8480 100%)', color: '#fff', border: 'none', padding: '1.1rem', borderRadius: '14px', fontSize: '1.1rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, transition: 'all 0.2s ease', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', boxShadow: '0 8px 20px -6px rgba(109, 40, 217, 0.5)', fontFamily: 'inherit' }}
                   onMouseOver={(e) => { if(!loading) e.target.style.transform = 'translateY(-2px)'; }}
                   onMouseOut={(e) => { if(!loading) e.target.style.transform = 'translateY(0)'; }}
                 >
@@ -128,33 +128,33 @@ export default function HREmployeeInvite() {
           {/* Success Card */}
           {invite && (
             <div style={{ animation: 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)' }}>
-              <div className="card" style={{ padding: '2.5rem', borderRadius: '24px', background: '#f5f3ff', border: '2px dashed #c4b5fd', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '120px', height: '120px', background: '#ede9fe', borderRadius: '50%', zIndex: 0 }}></div>
+              <div className="card" style={{ padding: '2.5rem', borderRadius: '24px', background: '#BAC8B1', border: '2px dashed #c4b5fd', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '120px', height: '120px', background: '#BAC8B1', borderRadius: '50%', zIndex: 0 }}></div>
                 
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                     <div style={{ width: '40px', height: '40px', background: '#10b981', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 4px 10px rgba(16, 185, 129, 0.3)' }}>
                       <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1f2937', letterSpacing: '-0.01em' }}>Invitation Sent!</h3>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#404E3B', letterSpacing: '-0.01em' }}>Invitation Sent!</h3>
                   </div>
 
-                  <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                    <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Sent to</p>
-                    <p style={{ fontSize: '1.15rem', fontWeight: 700, color: '#4f46e5', marginBottom: '1.25rem' }}>{invite.email}</p>
+                  <div style={{ background: '#BAC8B1', borderRadius: '16px', padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                    <p style={{ fontSize: '0.85rem', color: '#404E3B', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Sent to</p>
+                    <p style={{ fontSize: '1.15rem', fontWeight: 700, color: '#7B9669', marginBottom: '1.25rem' }}>{invite.email}</p>
                     
-                    <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Expires On</p>
+                    <p style={{ fontSize: '0.85rem', color: '#404E3B', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Expires On</p>
                     <p style={{ fontSize: '1.05rem', fontWeight: 600, color: '#374151' }}>{new Date(invite.expires_at).toLocaleString()}</p>
                   </div>
 
-                  <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                  <div style={{ background: '#BAC8B1', borderRadius: '16px', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                     <div style={{ overflow: 'hidden' }}>
-                      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#8b5cf6', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Setup Link</p>
-                      <p style={{ fontSize: '0.9rem', color: '#4b5563', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontFamily: 'monospace' }}>{invite.setup_link}</p>
+                      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#7B9669', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Setup Link</p>
+                      <p style={{ fontSize: '0.9rem', color: '#404E3B', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontFamily: 'monospace' }}>{invite.setup_link}</p>
                     </div>
                     <button 
                       onClick={copyToClipboard}
-                      style={{ background: copied ? '#10b981' : '#f3e8ff', color: copied ? '#fff' : '#7c3aed', border: 'none', padding: '0.75rem', borderRadius: '12px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'all 0.2s', boxShadow: copied ? '0 4px 10px rgba(16, 185, 129, 0.2)' : 'none' }}
+                      style={{ background: copied ? '#10b981' : '#BAC8B1', color: copied ? '#fff' : '#7B9669', border: 'none', padding: '0.75rem', borderRadius: '12px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'all 0.2s', boxShadow: copied ? '0 4px 10px rgba(16, 185, 129, 0.2)' : 'none' }}
                       title="Copy Link"
                     >
                       {copied ? (

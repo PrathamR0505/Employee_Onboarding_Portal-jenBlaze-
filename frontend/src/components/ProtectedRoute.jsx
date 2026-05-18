@@ -8,7 +8,7 @@ export default function ProtectedRoute({ children, role }) {
   if (loading) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <div style={{ fontSize: '1.2rem', color: '#6b7280' }}>Loading...</div>
+        <div style={{ fontSize: '1.2rem', color: '#404E3B' }}>Loading...</div>
       </div>
     );
   }

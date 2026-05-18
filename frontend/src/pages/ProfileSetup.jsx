@@ -99,9 +99,9 @@ export default function ProfileSetup() {
     { label: 'CONFIRMED' }
   ];
 
-  const inputStyle = { width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #f3e8ff', background: '#fcfaff', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit', color: '#4b5563' };
-  const labelStyle = { display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#4b5563', marginBottom: '0.5rem' };
-  const cardStyle = { background: '#ffffff', borderRadius: '16px', padding: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)', border: '1px solid #f3f4f6', height: '100%' };
+  const inputStyle = { width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #BAC8B1', background: '#BAC8B1', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit', color: '#404E3B' };
+  const labelStyle = { display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#404E3B', marginBottom: '0.5rem' };
+  const cardStyle = { background: '#BAC8B1', borderRadius: '16px', padding: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)', border: '1px solid #f3f4f6', height: '100%' };
 
   return (
     <Layout>
@@ -109,7 +109,7 @@ export default function ProfileSetup() {
         
         {/* Stepper */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '3rem', position: 'relative', padding: '0 1rem' }}>
-          <div style={{ position: 'absolute', top: '16px', left: '2rem', right: '2rem', height: '2px', background: '#f3e8ff', zIndex: 0 }}></div>
+          <div style={{ position: 'absolute', top: '16px', left: '2rem', right: '2rem', height: '2px', background: '#BAC8B1', zIndex: 0 }}></div>
           
           {steps.map((step, idx) => {
             const isCompleted = idx < currentStepIdx;
@@ -118,19 +118,19 @@ export default function ProfileSetup() {
             return (
               <div key={idx} style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
                 {isCompleted ? (
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#714b9c', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 0 4px #faf8fc' }}>
+                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#7B9669', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 0 4px #faf8fc' }}>
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path></svg>
                   </div>
                 ) : isActive ? (
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#714b9c', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600, boxShadow: '0 0 0 4px #faf8fc' }}>
+                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#7B9669', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600, boxShadow: '0 0 0 4px #faf8fc' }}>
                     0{idx + 1}
                   </div>
                 ) : (
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#ffffff', border: '2px solid #e5e7eb', color: '#9ca3af', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600, boxShadow: '0 0 0 4px #faf8fc' }}>
+                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#BAC8B1', border: '2px solid #9AA991', color: '#9ca3af', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600, boxShadow: '0 0 0 4px #faf8fc' }}>
                     0{idx + 1}
                   </div>
                 )}
-                <span style={{ fontSize: '0.65rem', fontWeight: 700, color: (isCompleted || isActive) ? '#714b9c' : '#9ca3af', letterSpacing: '0.05em' }}>{step.label}</span>
+                <span style={{ fontSize: '0.65rem', fontWeight: 700, color: (isCompleted || isActive) ? '#7B9669' : '#9ca3af', letterSpacing: '0.05em' }}>{step.label}</span>
               </div>
             );
           })}
@@ -139,22 +139,22 @@ export default function ProfileSetup() {
         {/* Header */}
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#1f2937', margin: 0 }}>Employee Profile Setup</h1>
+            <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#404E3B', margin: 0 }}>Employee Profile Setup</h1>
             <span style={{ background: '#fef3c7', color: '#92400e', fontSize: '0.75rem', fontWeight: 600, padding: '0.25rem 0.75rem', borderRadius: '1rem', border: '1px solid #fde68a' }}>Profile Incomplete</span>
           </div>
-          <p style={{ color: '#6b7280', fontSize: '0.95rem', margin: 0 }}>Please complete all sections of your employee profile to proceed with the background verification process.</p>
+          <p style={{ color: '#404E3B', fontSize: '0.95rem', margin: 0 }}>Please complete all sections of your employee profile to proceed with the background verification process.</p>
         </div>
 
         {/* Completion Status Bar */}
-        <div style={{ background: '#ffffff', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #f3f4f6' }}>
+        <div style={{ background: '#BAC8B1', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #f3f4f6' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#374151' }}>Completion Status</span>
             <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#374151' }}>{progressPercent}% Complete</span>
           </div>
-          <div style={{ width: '100%', height: '8px', background: '#f3e8ff', borderRadius: '4px', overflow: 'hidden' }}>
-            <div style={{ width: `${progressPercent}%`, height: '100%', background: '#714b9c', transition: 'width 0.3s ease' }}></div>
+          <div style={{ width: '100%', height: '8px', background: '#BAC8B1', borderRadius: '4px', overflow: 'hidden' }}>
+            <div style={{ width: `${progressPercent}%`, height: '100%', background: '#7B9669', transition: 'width 0.3s ease' }}></div>
           </div>
-          <p style={{ fontSize: '0.8rem', color: '#6b7280', margin: '0.75rem 0 0 0' }}>Estimated time to complete: 15 minutes.</p>
+          <p style={{ fontSize: '0.8rem', color: '#404E3B', margin: '0.75rem 0 0 0' }}>Estimated time to complete: 15 minutes.</p>
         </div>
 
         {error && <div style={{ background: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>{error}</div>}
@@ -167,7 +167,7 @@ export default function ProfileSetup() {
             {/* 1. Personal Details */}
             <div style={cardStyle}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="20" height="20" fill="none" stroke="#714b9c" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                 <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#374151', margin: 0 }}>Personal Details</h3>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -200,7 +200,7 @@ export default function ProfileSetup() {
             {/* 2. Contact Details */}
             <div style={cardStyle}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="20" height="20" fill="none" stroke="#714b9c" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
                 <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#374151', margin: 0 }}>Contact Details</h3>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -222,7 +222,7 @@ export default function ProfileSetup() {
             {/* 3. Bank Details */}
             <div style={cardStyle}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="20" height="20" fill="none" stroke="#714b9c" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
                 <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#374151', margin: 0 }}>Bank Details</h3>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -241,9 +241,9 @@ export default function ProfileSetup() {
                   </div>
                 </div>
                 
-                <div style={{ background: '#f5f3ff', border: '1px solid #ede9fe', borderRadius: '8px', padding: '0.85rem', display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
-                  <svg width="18" height="18" fill="none" stroke="#714b9c" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink: 0 }}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                  <span style={{ fontSize: '0.75rem', color: '#4b5563', lineHeight: 1.4 }}>Payment information is encrypted and stored securely following GDPR compliance.</span>
+                <div style={{ background: '#BAC8B1', border: '1px solid #BAC8B1', borderRadius: '8px', padding: '0.85rem', display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
+                  <svg width="18" height="18" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink: 0 }}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span style={{ fontSize: '0.75rem', color: '#404E3B', lineHeight: 1.4 }}>Payment information is encrypted and stored securely following GDPR compliance.</span>
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function ProfileSetup() {
             {/* 4. PAN / Tax Details */}
             <div style={cardStyle}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="20" height="20" fill="none" stroke="#714b9c" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#374151', margin: 0 }}>PAN / Tax Details</h3>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -274,11 +274,11 @@ export default function ProfileSetup() {
           </div>
 
           {/* Action Buttons */}
-          <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1.5rem', borderTop: '1px solid #e5e7eb', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
-            <button type="button" onClick={() => fetchProfile()} style={{ background: 'none', border: 'none', color: '#6b7280', fontSize: '0.95rem', fontWeight: 600, cursor: 'pointer' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1.5rem', borderTop: '1px solid #9AA991', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+            <button type="button" onClick={() => fetchProfile()} style={{ background: 'none', border: 'none', color: '#404E3B', fontSize: '0.95rem', fontWeight: 600, cursor: 'pointer' }}>
               Discard Changes
             </button>
-            <button type="submit" disabled={loading} style={{ background: '#714b9c', color: '#fff', border: 'none', padding: '0.85rem 1.5rem', borderRadius: '8px', fontSize: '0.95rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <button type="submit" disabled={loading} style={{ background: '#7B9669', color: '#fff', border: 'none', padding: '0.85rem 1.5rem', borderRadius: '8px', fontSize: '0.95rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               {loading && <svg className="animate-spin" width="16" height="16" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>}
               Save Profile & Continue
             </button>

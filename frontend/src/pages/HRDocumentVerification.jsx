@@ -169,12 +169,12 @@ export default function HRDocumentVerification() {
         <div className="grid grid-2" style={{ marginBottom: '1.5rem', gap: '1.5rem' }}>
           {/* Total Progress Card */}
           <div className="card" style={{ padding: '1.5rem', border: '1px solid #f3f4f6', boxShadow: '0 2px 4px rgba(0,0,0,0.02)', borderRadius: '12px' }}>
-            <h3 style={{ fontSize: '0.9rem', color: '#6b7280', fontWeight: 500, marginBottom: '0.75rem' }}>Total Progress</h3>
+            <h3 style={{ fontSize: '0.9rem', color: '#404E3B', fontWeight: 500, marginBottom: '0.75rem' }}>Total Progress</h3>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.25rem' }}>
-              <span style={{ fontSize: '2.5rem', fontWeight: 700, color: '#7c3aed' }}>{approvedDocs}</span>
+              <span style={{ fontSize: '2.5rem', fontWeight: 700, color: '#7B9669' }}>{approvedDocs}</span>
               <span style={{ fontSize: '1.25rem', color: '#9ca3af', fontWeight: 500 }}>/ {totalDocs}</span>
             </div>
-            <p style={{ color: '#4b5563', fontSize: '0.9rem', marginBottom: '1rem', fontWeight: 500 }}>Documents Approved</p>
+            <p style={{ color: '#404E3B', fontSize: '0.9rem', marginBottom: '1rem', fontWeight: 500 }}>Documents Approved</p>
             <div className="progress-bar" style={{ height: '6px', background: '#f3f4f6', borderRadius: '10px' }}>
               <div className="progress-fill" style={{ width: `${(approvedDocs / Math.max(totalDocs, 1)) * 100}%`, background: '#b286fd', borderRadius: '10px' }}></div>
             </div>
@@ -183,12 +183,12 @@ export default function HRDocumentVerification() {
           {/* Current Status Card */}
           <div className="card" style={{ padding: '1.5rem', border: '1px solid #f3f4f6', boxShadow: '0 2px 4px rgba(0,0,0,0.02)', borderRadius: '12px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ width: '48px', height: '48px', background: '#f5f3ff', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8b5cf6', flexShrinks: 0 }}>
+              <div style={{ width: '48px', height: '48px', background: '#BAC8B1', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B9669', flexShrinks: 0 }}>
                 <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
               <div>
-                <p style={{ fontSize: '0.85rem', color: '#6b7280', fontWeight: 500, marginBottom: '0.25rem' }}>Current Status</p>
-                <h3 style={{ fontSize: '1.15rem', color: '#1f2937', fontWeight: 600, marginBottom: '0.25rem' }}>{employeeInfo.onboarding_status}</h3>
+                <p style={{ fontSize: '0.85rem', color: '#404E3B', fontWeight: 500, marginBottom: '0.25rem' }}>Current Status</p>
+                <h3 style={{ fontSize: '1.15rem', color: '#404E3B', fontWeight: 600, marginBottom: '0.25rem' }}>{employeeInfo.onboarding_status}</h3>
                 <p style={{ fontSize: '0.8rem', color: '#9ca3af' }}>Last updated today</p>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function HRDocumentVerification() {
 
         <div className="card" style={{ padding: 0, overflow: 'hidden', border: '1px solid #f3f4f6', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
           <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #f3f4f6' }}>
-            <h3 style={{ fontSize: '1.05rem', color: '#1f2937', fontWeight: 600 }}>Document Inventory</h3>
+            <h3 style={{ fontSize: '1.05rem', color: '#404E3B', fontWeight: 600 }}>Document Inventory</h3>
           </div>
           <div className="table-container">
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -220,13 +220,13 @@ export default function HRDocumentVerification() {
                   <tr key={doc.id} style={{ borderBottom: '1px solid #f3f4f6' }}>
                     <td style={{ padding: '1rem 1.5rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <div style={{ width: '32px', height: '32px', background: '#f5f3ff', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8b5cf6' }}>
+                        <div style={{ width: '32px', height: '32px', background: '#BAC8B1', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B9669' }}>
                            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>
                         </div>
                         <strong style={{ color: '#374151', fontWeight: 500, fontSize: '0.95rem' }}>{doc.DocumentType?.name}</strong>
                       </div>
                     </td>
-                    <td style={{ padding: '1rem 1.5rem', color: '#4b5563', fontSize: '0.9rem' }}>{doc.original_name}</td>
+                    <td style={{ padding: '1rem 1.5rem', color: '#404E3B', fontSize: '0.9rem' }}>{doc.original_name}</td>
                     <td style={{ padding: '1rem 1.5rem' }}>
                       {doc.status === 'approved' && <span style={{ background: '#dcfce7', color: '#166534', padding: '0.25rem 0.6rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 600 }}>✓ Approved</span>}
                       {doc.status === 'pending' && <span style={{ background: '#fef3c7', color: '#92400e', padding: '0.25rem 0.6rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 600 }}>⏱ Pending</span>}
@@ -237,15 +237,15 @@ export default function HRDocumentVerification() {
                     </td>
                     <td style={{ padding: '1rem 1.5rem', textAlign: 'center' }}>
                       <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
-                        <button onClick={() => handleDownload(doc.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', padding: '4px' }} title="Download File">
+                        <button onClick={() => handleDownload(doc.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#404E3B', padding: '4px' }} title="Download File">
                           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         </button>
-                        <button onClick={() => handleDownloadOCR(doc.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#8b5cf6', padding: '4px' }} title="Download OCR">
+                        <button onClick={() => handleDownloadOCR(doc.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#7B9669', padding: '4px' }} title="Download OCR">
                           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                         </button>
                         {doc.status !== 'approved' && (
                           <>
-                            <span style={{ width: '1px', height: '16px', background: '#e5e7eb', margin: '0 4px' }}></span>
+                            <span style={{ width: '1px', height: '16px', background: '#9AA991', margin: '0 4px' }}></span>
                             <button onClick={() => handleVerify(doc.id, 'approved')} disabled={actionLoading} style={{ background: 'none', border: 'none', cursor: actionLoading ? 'not-allowed' : 'pointer', color: '#10b981', padding: '4px' }} title="Approve">
                               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path></svg>
                             </button>
@@ -260,7 +260,7 @@ export default function HRDocumentVerification() {
                 ))}
                 {documents.length === 0 && (
                   <tr>
-                    <td colSpan="5" style={{ textAlign: 'center', padding: '3rem', color: '#6b7280', fontSize: '0.9rem' }}>No documents uploaded yet.</td>
+                    <td colSpan="5" style={{ textAlign: 'center', padding: '3rem', color: '#404E3B', fontSize: '0.9rem' }}>No documents uploaded yet.</td>
                   </tr>
                 )}
               </tbody>
@@ -269,13 +269,13 @@ export default function HRDocumentVerification() {
         </div>
 
         {(allApproved || checklistDone) && employeeInfo.onboarding_status !== 'Joining Confirmed' && (
-          <div className="card mt-3" style={{ background: '#f5f3ff', border: '1px solid #ddd6fe', padding: '1.5rem', borderRadius: '12px' }}>
+          <div className="card mt-3" style={{ background: '#BAC8B1', border: '1px solid #ddd6fe', padding: '1.5rem', borderRadius: '12px' }}>
             <div className="flex-between">
               <div>
-                <h3 style={{ color: '#4f46e5', marginBottom: '0.25rem', fontSize: '1.1rem' }}>Ready for Joining</h3>
-                <p style={{ color: '#6b7280', fontSize: '0.9rem' }}>All documents are verified. You can now confirm the joining date.</p>
+                <h3 style={{ color: '#7B9669', marginBottom: '0.25rem', fontSize: '1.1rem' }}>Ready for Joining</h3>
+                <p style={{ color: '#404E3B', fontSize: '0.9rem' }}>All documents are verified. You can now confirm the joining date.</p>
               </div>
-              <button className="btn btn-primary" onClick={handleConfirmJoining} disabled={actionLoading} style={{ background: '#7c3aed' }}>
+              <button className="btn btn-primary" onClick={handleConfirmJoining} disabled={actionLoading} style={{ background: '#7B9669' }}>
                 {actionLoading ? 'Processing...' : 'Confirm Joining Date'}
               </button>
             </div>
@@ -320,7 +320,7 @@ export default function HRDocumentVerification() {
               ))}
               {employees.length === 0 && (
                 <tr>
-                  <td colSpan="4" style={{ textAlign: 'center', color: '#6b7280' }}>No employees found.</td>
+                  <td colSpan="4" style={{ textAlign: 'center', color: '#404E3B' }}>No employees found.</td>
                 </tr>
               )}
             </tbody>

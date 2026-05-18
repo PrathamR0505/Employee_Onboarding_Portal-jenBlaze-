@@ -41,7 +41,7 @@ export default function Login() {
       {/* Left Panel - Branding & Animation */}
       <div className="auth-left-panel" style={{ 
         flex: 1, 
-        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', 
+        background: 'linear-gradient(135deg, #7B9669 0%, #6C8480 100%)', 
         position: 'relative', 
         overflow: 'hidden',
         display: 'flex',
@@ -52,7 +52,7 @@ export default function Login() {
       }}>
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '500px' }}>
           <h1 style={{ fontSize: '3.5rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-            Welcome to<br/>Onboarding
+            Welcome to<br/>Hackaholics
           </h1>
           <p style={{ fontSize: '1.1rem', lineHeight: 1.6, opacity: 0.9 }}>
             Step into your new future. Our comprehensive portal streamlines every part of your professional integration, ensuring you have the tools you need from day one.
@@ -97,17 +97,17 @@ export default function Login() {
       {/* Right Panel - Login Form */}
       <div className="auth-right-panel" style={{ 
         flex: 1, 
-        background: '#ffffff', 
+        background: '#BAC8B1', 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
         padding: '2rem'
       }}>
         <div style={{ width: '100%', maxWidth: '440px' }}>
-          <div style={{ background: '#ffffff', borderRadius: '24px', padding: '3rem 2.5rem', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', border: '1px solid #f3f4f6' }}>
+          <div style={{ background: '#BAC8B1', borderRadius: '24px', padding: '3rem 2.5rem', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', border: '1px solid #f3f4f6' }}>
             
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#1f2937', marginBottom: '0.5rem' }}>Access Your Portal</h2>
-            <p style={{ color: '#6b7280', fontSize: '0.95rem', marginBottom: '2rem' }}>Please log in to your account to continue.</p>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#404E3B', marginBottom: '0.5rem' }}>Access Your Portal</h2>
+            <p style={{ color: '#404E3B', fontSize: '0.95rem', marginBottom: '2rem' }}>Please log in to your account to continue.</p>
 
             {/* Tabs */}
             <div style={{ display: 'flex', borderBottom: '2px solid #f3f4f6', marginBottom: '1.5rem' }}>
@@ -117,8 +117,8 @@ export default function Login() {
                 style={{
                   flex: 1, padding: '0.75rem 0', background: 'none', border: 'none', cursor: 'pointer',
                   fontSize: '0.95rem', fontWeight: tab === 'employee' ? 600 : 500,
-                  color: tab === 'employee' ? '#6d28d9' : '#9ca3af',
-                  borderBottom: tab === 'employee' ? '2px solid #6d28d9' : '2px solid transparent',
+                  color: tab === 'employee' ? '#7B9669' : '#9ca3af',
+                  borderBottom: tab === 'employee' ? '2px solid #7B9669' : '2px solid transparent',
                   marginBottom: '-2px', transition: 'all 0.2s ease', outline: 'none'
                 }}
               >
@@ -130,8 +130,8 @@ export default function Login() {
                 style={{
                   flex: 1, padding: '0.75rem 0', background: 'none', border: 'none', cursor: 'pointer',
                   fontSize: '0.95rem', fontWeight: tab === 'hr' ? 600 : 500,
-                  color: tab === 'hr' ? '#6d28d9' : '#9ca3af',
-                  borderBottom: tab === 'hr' ? '2px solid #6d28d9' : '2px solid transparent',
+                  color: tab === 'hr' ? '#7B9669' : '#9ca3af',
+                  borderBottom: tab === 'hr' ? '2px solid #7B9669' : '2px solid transparent',
                   marginBottom: '-2px', transition: 'all 0.2s ease', outline: 'none'
                 }}
               >
@@ -141,14 +141,14 @@ export default function Login() {
 
             {/* Context Alert */}
             {tab === 'employee' ? (
-              <div style={{ background: '#faf5ff', border: '1px solid #e9d5ff', borderRadius: '8px', padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <svg width="18" height="18" fill="none" stroke="#8b5cf6" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span style={{ fontSize: '0.85rem', color: '#7c3aed', fontWeight: 500 }}>New here? Create your employee account below.</span>
+              <div style={{ background: '#E6E6E6', border: '1px solid #e9d5ff', borderRadius: '8px', padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <svg width="18" height="18" fill="none" stroke="#7B9669" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span style={{ fontSize: '0.85rem', color: '#7B9669', fontWeight: 500 }}>New here? Create your employee account below.</span>
               </div>
             ) : (
-              <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              <div style={{ background: '#E6E6E6', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                 <svg width="18" height="18" fill="none" stroke="#64748b" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                <span style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 500 }}>HR accounts are securely provisioned.</span>
+                <span style={{ fontSize: '0.85rem', color: '#404E3B', fontWeight: 500 }}>HR accounts are securely provisioned.</span>
               </div>
             )}
 
@@ -168,9 +168,9 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
                   required
-                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #d1d5db', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-                  onFocus={(e) => { e.target.style.borderColor = '#8b5cf6'; e.target.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)'; }}
-                  onBlur={(e) => { e.target.style.borderColor = '#d1d5db'; e.target.style.boxShadow = 'none'; }}
+                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', fontSize: '0.95rem', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+                  onFocus={(e) => { e.target.style.borderColor = '#7B9669'; e.target.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.boxShadow = 'none'; }}
                 />
               </div>
 
@@ -183,9 +183,9 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     required
-                    style={{ width: '100%', padding: '0.85rem 2.5rem 0.85rem 1rem', borderRadius: '10px', border: '1px solid #d1d5db', background: '#f8fafc', fontSize: '1rem', letterSpacing: !showPassword && password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
-                    onFocus={(e) => { e.target.style.borderColor = '#8b5cf6'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = '#d1d5db'; e.target.style.background = '#f8fafc'; e.target.style.boxShadow = 'none'; }}
+                    style={{ width: '100%', padding: '0.85rem 2.5rem 0.85rem 1rem', borderRadius: '10px', border: '1px solid #9AA991', background: '#E6E6E6', fontSize: '1rem', letterSpacing: !showPassword && password ? '2px' : 'normal', boxSizing: 'border-box', outline: 'none', transition: 'all 0.2s', fontFamily: 'inherit' }}
+                    onFocus={(e) => { e.target.style.borderColor = '#7B9669'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = '#9AA991'; e.target.style.background = '#E6E6E6'; e.target.style.boxShadow = 'none'; }}
                   />
                   <button 
                     type="button"
@@ -204,9 +204,9 @@ export default function Login() {
               <button 
                 type="submit" 
                 disabled={loading}
-                style={{ width: '100%', background: '#7c3aed', color: '#fff', border: 'none', padding: '0.95rem', borderRadius: '10px', fontSize: '1rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.8 : 1, transition: 'background 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
-                onMouseOver={(e) => { if(!loading) e.currentTarget.style.background = '#6d28d9'; }}
-                onMouseOut={(e) => { if(!loading) e.currentTarget.style.background = '#7c3aed'; }}
+                style={{ width: '100%', background: '#7B9669', color: '#fff', border: 'none', padding: '0.95rem', borderRadius: '10px', fontSize: '1rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.8 : 1, transition: 'background 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+                onMouseOver={(e) => { if(!loading) e.currentTarget.style.background = '#7B9669'; }}
+                onMouseOut={(e) => { if(!loading) e.currentTarget.style.background = '#7B9669'; }}
               >
                 {loading ? 'Authenticating...' : 'Sign In to Portal'} 
                 {!loading && <span style={{ marginLeft: '4px' }}>→</span>}
@@ -215,8 +215,8 @@ export default function Login() {
 
             {tab === 'employee' && (
               <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <Link to="/setup" style={{ fontSize: '0.9rem', color: '#6b7280', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseOver={(e) => e.target.style.color = '#7c3aed'}
+                <Link to="/setup" style={{ fontSize: '0.9rem', color: '#404E3B', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseOver={(e) => e.target.style.color = '#7B9669'}
                   onMouseOut={(e) => e.target.style.color = '#6b7280'}
                 >
                   Have an invite? Complete first-time setup
